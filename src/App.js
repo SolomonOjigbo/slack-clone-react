@@ -1,8 +1,9 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "./App.css";
+import { AppBody } from "./App.styles";
 import Header from "./components/Header";
 import Home from "./components/Home";
+import Sidebar from "./components/Sidebar";
 
 function App() {
 	return (
@@ -11,9 +12,12 @@ function App() {
 				<BrowserRouter>
 					<>
 						<Header />
-						<Routes>
-							<Route path="/" element={<Home />} />
-						</Routes>
+						<AppBody>
+							<Sidebar />
+							<Routes>
+								<Route path="/" element={<Home />} />
+							</Routes>
+						</AppBody>
 					</>
 				</BrowserRouter>
 			</div>
