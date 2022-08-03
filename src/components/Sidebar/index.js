@@ -23,7 +23,7 @@ import {
 
 function Sidebar() {
 	const [channels, loading, error] = useCollectionOnce(
-		collection(db, "rooms"),
+		collection(db, "/rooms"),
 		{
 			snapshotListenOptions: { includeMetadataChanges: true },
 		}
@@ -54,12 +54,14 @@ function Sidebar() {
 			<hr />
 			<SidebarOption Icon={AddIcon} addChannelOption title="Add Channel" />
 			{error && <strong>Error: {JSON.stringify(error)}</strong>}
-			{loading && <span>Channels: Loading...</span>}
+			{/* {loading && <span>Channels: Loading...</span>} */}
 			{channels && (
 				<span>
 					Channels:{" "}
 					{channels?.docs.map((doc) => {
-						<SidebarOption key={doc.id} id={doc.id} title={doc.data().name} />;
+						return (
+							<SidebarOption key={doc.id} id={doc.id} title={doc.data().name} />
+						);
 					})}
 				</span>
 			)}
