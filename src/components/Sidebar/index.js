@@ -16,12 +16,18 @@ import AddIcon from "@mui/icons-material/Add";
 import SidebarOption from "../SidebarOption";
 import { db } from "../../firebase";
 import { collection } from "firebase/firestore";
-import { useCollection } from "react-firebase-hooks/firestore";
+import {
+	useCollection,
+	useCollectionOnce,
+} from "react-firebase-hooks/firestore";
 
 function Sidebar() {
-	const [channels, loading, error] = useCollection(collection(db, "rooms"), {
-		snapshotListenOptions: { includeMetadataChanges: true },
-	});
+	const [channels, loading, error] = useCollectionOnce(
+		collection(db, "rooms"),
+		{
+			snapshotListenOptions: { includeMetadataChanges: true },
+		}
+	);
 
 	return (
 		<SidebarContainer>
@@ -47,9 +53,16 @@ function Sidebar() {
 			<SidebarOption Icon={ExpandMoreIcon} title="Channels" />
 			<hr />
 			<SidebarOption Icon={AddIcon} addChannelOption title="Add Channel" />
-			{channels?.docs.map((doc) => {
-				<SidebarOption key={doc.id} id={doc.id} title={doc.data().name} />;
-			})}
+			{error && <strong>Error: {JSON.stringify(error)}</strong>}
+			{loading && <span>Channels: Loading...</span>}
+			{channels && (
+				<span>
+					Channels:{" "}
+					{channels?.docs.map((doc) => {
+						<SidebarOption key={doc.id} id={doc.id} title={doc.data().name} />;
+					})}
+				</span>
+			)}
 		</SidebarContainer>
 	);
 }
