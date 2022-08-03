@@ -1,6 +1,7 @@
 import { addDoc, collection } from "firebase/firestore";
 import React from "react";
 import { db } from "../../firebase";
+
 import {
 	SidebarOptionChannel,
 	SidebarOptionContainer,
@@ -17,11 +18,11 @@ function SidebarOption({ Icon, title, addChannelOption, id }) {
 		}
 	};
 
-	const selectChannel = () => {};
+	const selectedChannel = () => {};
 
 	return (
 		<SidebarOptionContainer
-			onClick={addChannelOption ? addChannel : selectChannel}
+			onClick={addChannelOption ? addChannel : selectedChannel}
 		>
 			{Icon && <Icon fontSize="small" style={{ padding: 10 }} />}
 			{Icon ? (
