@@ -1,12 +1,5 @@
 import { Button } from "@mui/material";
-import { Firebase } from "firebase/app";
-import {
-	addDoc,
-	doc,
-	collection,
-	serverTimestamp,
-	setDoc,
-} from "firebase/firestore";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, db } from "../../firebase";

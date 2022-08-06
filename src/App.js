@@ -1,11 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import {
-	AppBody,
-	AppLoading,
-	LoadingContents,
-	LoadingSpinner,
-} from "./App.styles";
+import { AppBody, AppLoading, LoadingSpinner } from "./App.styles";
 import Chat from "./components/Chat";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
@@ -22,7 +17,7 @@ function App() {
 		return (
 			<AppLoading>
 				<LoadingSpinner>
-					<img src={SlackLogo} />
+					<img src={SlackLogo} alt="" />
 					<CircularProgress color="success" />
 					<p>Initialising User...</p>
 				</LoadingSpinner>

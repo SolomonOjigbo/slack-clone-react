@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import {
 	ChatContainer,
 	ChatMessages,
-	ChatBottom,
+	// ChatBottom,
 	Header,
 	HeaderLeft,
 	HeaderRight,
@@ -12,12 +12,7 @@ import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import { useSelector } from "react-redux";
 import { selectRoomId } from "../../features/appSlice";
 import ChatInput from "../ChatInput";
-import {
-	useCollection,
-	useCollectionOnce,
-	useDocument,
-	useDocumentOnce,
-} from "react-firebase-hooks/firestore";
+import { useCollection, useDocument } from "react-firebase-hooks/firestore";
 import { collection, doc } from "firebase/firestore";
 import { db } from "../../firebase";
 import Message from "../Message";
