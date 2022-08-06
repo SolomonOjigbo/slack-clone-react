@@ -9,7 +9,7 @@ import {
 } from "./SidebarOption.styles";
 import { enterRoom } from "../../features/appSlice";
 
-function SidebarOption({ Icon, title, addChannelOption, id }) {
+function SidebarOption({ Icon, title, id, addChannelOption }) {
 	const dispatch = useDispatch();
 	const addChannel = () => {
 		const channelName = prompt("Please enter the channel name");

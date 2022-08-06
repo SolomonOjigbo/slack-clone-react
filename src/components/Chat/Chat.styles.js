@@ -4,7 +4,7 @@ export const ChatContainer = styled.div`
 	flex: 0.7;
 	flex-grow: 1;
 	overflow-y: scroll;
-	margin-top: 60px;
+	margin-top: 80px;
 `;
 
 export const Header = styled.div`
@@ -38,4 +38,10 @@ export const HeaderRight = styled.div`
 	}
 `;
 
-export const ChatMessages = styled.div``;
+export const ChatBottom = styled.div`
+	padding: 200px;
+`;
+
+export const ChatMessages = styled.div`
+	padding: auto;
+`;

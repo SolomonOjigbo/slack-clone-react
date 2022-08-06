@@ -6,7 +6,8 @@ export const SidebarContainer = styled.div`
 	color: white;
 	border-top: 1px solid #49274b;
 	max-width: 268px;
-	margin-top: 45px;
+	margin-top: 86px;
+	height: 100%;
 `;
 
 export const SidebarHeader = styled.div`
