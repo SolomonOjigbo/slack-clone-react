@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import ExitToAppOutlinedIcon from "@mui/icons-material/ExitToAppOutlined";
 
 export const HeaderContainer = styled.div`
 	display: flex;
@@ -55,6 +56,15 @@ export const HeaderRight = styled.div`
 `;
 
 export const HeaderAvatar = styled(AccountCircleIcon)`
+	cursor: pointer;
+	margin-right: 15px;
+
+	:hover {
+		opacity: 0.8;
+	}
+`;
+
+export const HeaderLogout = styled(ExitToAppOutlinedIcon)`
 	cursor: pointer;
 	margin-right: 15px;
 
