@@ -31,29 +31,26 @@ function App() {
 			</div>
 		);
 	}
-	if (user) {
-		return (
+
+	return (
+		<BrowserRouter>
 			<>
-				<div className="App">
-					<BrowserRouter>
-						{!user ? (
-							<Login />
-						) : (
-							<>
-								<Header />
-								<AppBody>
-									<Sidebar />
-									<Routes>
-										<Route path="/" element={<Chat />} />
-									</Routes>
-								</AppBody>
-							</>
-						)}
-					</BrowserRouter>
-				</div>
+				{!user ? (
+					<Login />
+				) : (
+					<>
+						<Header />
+						<AppBody>
+							<Sidebar />
+							<Routes>
+								<Route path="/" element={<Chat />} />
+							</Routes>
+						</AppBody>
+					</>
+				)}
 			</>
-		);
-	}
+		</BrowserRouter>
+	);
 }
 
 export default App;
